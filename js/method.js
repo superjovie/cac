@@ -33,7 +33,6 @@ function caculatecon() {
     var end = new Array;
     end = conCaculate(P0,P1,O0,O1);
     document.getElementById('content1').innerHTML = "方位"+end[0].toFixed(2)+"距离"+end[1].toFixed(2);
-    alert("方位"+end[0].toFixed(2)+"距离"+end[1].toFixed(2));
 }
 function caculatepro() {
     var P0 = parseFloat(document.getElementById("xaaa").value);
