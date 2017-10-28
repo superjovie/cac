@@ -26,13 +26,8 @@ function caculatecon() {
     var O0 = parseFloat(document.getElementById("xbb").value);
     var O1 = parseFloat(document.getElementById("ybb").value);
     var end = new Array;
-<<<<<<< HEAD
     end = conCaculate(P0, P1, O0, O1);
     document.getElementById('content1').innerHTML = "方位" + end[0].toFixed(2) + "距离" + end[1].toFixed(2);
-=======
-    end = conCaculate(P0,P1,O0,O1);
-    document.getElementById('content1').innerHTML = "方位"+end[0].toFixed(2)+"距离"+end[1].toFixed(2);
->>>>>>> origin/master
 }
 function caculatepro() {
     var P0 = parseFloat(document.getElementById("xaaa").value);
@@ -284,14 +279,7 @@ function mutual() {
         return r;
     }
 
-<<<<<<< HEAD
     var AC = cacside(get('muzg') - get('mucg'), get('mujxc'), get('mucg'));
     var cor = proCaculate(get('muxz'), get('muyz'), cacBasicFdirection(reverse(get('mujxfw')), get('muzg')), AC);
     document.getElementById('content3').innerHTML = '目标点坐标X' + cor[0].toFixed(2) + '坐标Y' + cor[1].toFixed(2);
 }
-=======
-    var AC = cacside(get('muzg')-get('mucg'),get('mujxc'),get('mucg'));
-    var cor = proCaculate(get('muxz'),get('muyz'),cacBasicFdirection(reverse(get('mujxfw')),get('muzg')),AC);
-    document.getElementById('content3').innerHTML='目标点坐标X'+cor[0].toFixed(2)+'坐标Y'+cor[1].toFixed(2);
-}
->>>>>>> origin/master
