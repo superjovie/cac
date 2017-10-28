@@ -21,7 +21,7 @@ myApp.onPageInit('about', function (page) {
 // Generate dynamic page
 var dynamicPageIndex = 0;
 function createContentPage() {
-	mainView.router.loadContent(
+    mainView.router.loadContent(
         '<!-- Top Navbar-->' +
         '<div class="navbar">' +
         '  <div class="navbar-inner">' +
@@ -43,5 +43,5 @@ function createContentPage() {
         '  </div>' +
         '</div>'
     );
-	return;
+    return;
 }
