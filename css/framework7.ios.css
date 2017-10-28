@@ -1341,7 +1341,7 @@ html.pixel-ratio-3 .navbar:after {
   position: relative;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
+  white-space: pre-wrap;
   line-height: 44px;
   -webkit-flex-shrink: 10;
   -ms-flex: 0 10 auto;
