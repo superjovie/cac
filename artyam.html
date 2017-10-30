@@ -21,9 +21,6 @@ artyom.on(['Good morning','Good afternoon']).then((i) => {
     }
 });
 
-artyom.on(['Repeat after me *'] , true).then((i,wildcard) => {
-    artyom.say("You've said : " + wildcard);
-});
 
 artyom.addCommands([
     {
