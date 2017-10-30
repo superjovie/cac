@@ -72,7 +72,8 @@ artyom.initialize({
 }).catch((err) => {
     console.error("Artyom couldn't be initialized: ", err);
 });
-
+if(artyom.recognizingSupported)
+{alert(“supported”);}
       }
     </script>
 </head>
