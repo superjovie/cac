@@ -57,27 +57,18 @@ artyom.addCommands([
     },
 ]);
 
-artyom.initialize({
-    lang: "en-GB", // GreatBritain english
-    continuous: true, // Listen forever
-    soundex: true,// Use the soundex algorithm to increase accuracy
-    debug: true, // Show messages in the console
-    executionKeyword: "and do it now",
-    listen: true, // Start to listen commands !
-
-    
-    name: "Jarvis" 
-}).then(() => {
-    console.log("Artyom has been succesfully initialized");
-}).catch((err) => {
-    console.error("Artyom couldn't be initialized: ", err);
-});
-if(artyom.recognizingSupported)
-{alert(“supported”);}
-else
-alert(“not”);
-      }
-    </script>
+setTimeout(function(){// if you use artyom.fatality , wait 250 ms to initialize again.
+         artyom.initialize({
+            lang:"en-GB",// A lot of languages are supported. Read the docs !
+            continuous:true,// Artyom will listen forever
+            listen:true, // Start recognizing
+            debug:true, // Show everything in the console
+            speed:1 // talk normally
+        }).then(function(){
+            alert("Ready to work !");
+        });
+    },250);
+}
 </head>
 <body>
 <button onclick="hello()">hello</button>
