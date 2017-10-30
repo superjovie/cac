@@ -73,21 +73,7 @@ artyom.initialize({
     console.error("Artyom couldn't be initialized: ", err);
 });
 
-
-artyom.say("Hello, this is a demo text. The next text will be spoken in Spanish",{
-    onStart: () => {
-        console.log("Reading ...");
-    },
-    onEnd: () => {
-        console.log("No more text to talk");
-
-        // Force the language of a single speechSynthesis
-        artyom.say("Hola, esto está en Español", {
-            lang:"es-ES"
-        });
-    }
-});
-        }
+      }
     </script>
 </head>
 <body>
