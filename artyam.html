@@ -9,6 +9,7 @@
 
 
 var artyom = new Artyom();
+alert(artyom.recognizingSupported);
 
 artyom.on(['Good morning','Good afternoon']).then((i) => {
     switch (i) {
