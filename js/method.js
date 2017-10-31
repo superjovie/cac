@@ -216,9 +216,9 @@ function reverse(an) {
 }
 function behind() {
     var con = conCaculate(get('bhxa'), get('bhya'), get('bhxb'), get('bhyb'));
-    var angleA = changemag(reverse(get('bhcca')), get('bhcp')) - con[0];
-    var ac = cacTreangleSide(angleA, (reverse(get('bhcca')) - get('bhcbc')) - angleA, con[1]);
-    var cor = proCaculate(get('bhxa'), get('bhya'), reverse(changemag(get('bhcca'), get('bhcp'))), ac[1]);
+    var angleA = changemag(reverse(get('bhcca')), get('bhcp')) - changemag(con[0],get('bhcp'));
+    var bc = cacside(get('bhcca')-get('bhccb'),con[1],angleA);
+    var cor = proCaculate(get('bhxb'), get('bhyb'), reverse(changemag(get('bhccb'), get('bhcp'))), bc);
     document.getElementById('content3').innerHTML = "C坐标X" + cor[0].toFixed(2) + "C坐标Y" + cor[1].toFixed(2);
 }
 function polar() {
