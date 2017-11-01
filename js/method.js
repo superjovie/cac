@@ -157,7 +157,7 @@ function doubleWatch() {
     var Dg1m = cacTreangleSide(mainWatch.ToM - mainWatch.TosecWatch, secWatch.TomainWatch - secWatch.ToM, g1g2)[1];
 
     document.getElementById('content2').innerHTML = "观目距离" + Dg1m.toFixed(2) + "主观侧观距离" + g1g2.toFixed(2);
-    singleWatch(parseFloat(document.getElementById('sgx0').value), parseFloat(document.getElementById('sgy0').value), xm, ym, parseFloat(document.getElementById('sgf').value), mainWatch.ToM, Dg1m);
+    singleWatch(parseFloat(document.getElementById('sgx0').value), parseFloat(document.getElementById('sgy0').value), get(‘sgx1’), get(‘sgy1’), parseFloat(document.getElementById('sgf').value), mainWatch.ToM, Dg1m);
 }
 
 
