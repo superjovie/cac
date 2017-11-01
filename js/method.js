@@ -165,10 +165,10 @@ function correctboom() {
     var F = cacBasicFdirection(get('xzff'), get('xzfgm'));
     var j = Math.abs(F - get('xzfpm'));
     var B = get('xzdgm') / get('xzdpm');
-    var L = j / get('xzdgm');
+    var L = j / get('xzdpm');
     var corMil = 0;
     var corHigh = 0;
-    if (F < get('xzfpm'))//观在左
+    if (F > get('xzfpm'))//观在左
     {
         corMil = -get('xzori') * B - get('xzdis') * L;
         corHigh = -get('xzdis') * get('xzbb') / 100;
