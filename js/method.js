@@ -168,7 +168,7 @@ function correctboom() {
     var L = j / get('xzdgm');
     var corMil = 0;
     var corHigh = 0;
-    if (F > get('xzfgm'))//观在左
+    if (F < get('xzfpm'))//观在左
     {
         corMil = -get('xzori') * B - get('xzdis') * L;
         corHigh = -get('xzdis') * get('xzbb') / 100;
