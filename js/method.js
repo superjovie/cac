@@ -192,6 +192,13 @@ function anglechange(an) {
     return an;
 
 }
+function change(an) {
+    if (an > 6000) {
+        an = an - 6000;
+    }
+    return an;
+
+}
 function basicdirection() {
 
     var val = cacTreangleSide(3000 - anglechange(get('bdfzg') - get('bdfcg')) - (3000 - anglechange(get('bdzc') - get('bdfcg'))), 3000 - anglechange(get('bdzc') - get('bdfcg')), get('bdjxc'))[1];
@@ -239,11 +246,11 @@ function lead() {
         }
     }
 
-    var an1 = change(get('lena') + reverse(get('lef1')));
+    var an1 = change(get('lena') + get('lef1')-3000);
     var cor1 = proCaculate(get('lexa'), get('leya'), an1, get('led1'));
-    an1 = change(an1 + reverse(get('lef2')));
+    an1 = change(an1 + get('lef2'));
     var cor2 = proCaculate(cor1[0], cor1[1], an1, get('led2'));
-    an1 = change(an1 + reverse(get('lef3')));
+    an1 = change(an1 + get('lef3'));
     var cor = proCaculate(cor2[0], cor2[1], an1, get('led3'));
     document.getElementById('content3').innerHTML = '目标坐标X' + cor[0].toFixed(2) + 'Y' + cor[1].toFixed(2);
 }
