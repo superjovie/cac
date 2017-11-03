@@ -1,6 +1,3 @@
-/**
- * Created by 李浩 on 2017/9/27.
- */
 var xx0, yy0, xx1, yy1, ff1, ff2, dd1 = 0;
 var vx0, vy0, vx1, vy1, vF, vfg1m, vfg1g2, vfg1b, vfg1o, vrg2o, vrg2m, vrg2b, vrg2g1, vDo = 0;
 function cacHightEffect(hight, dis) {
@@ -157,7 +154,7 @@ function doubleWatch() {
     var Dg1m = cacTreangleSide(mainWatch.ToM - mainWatch.TosecWatch, secWatch.TomainWatch - secWatch.ToM, g1g2)[1];
 
     document.getElementById('content2').innerHTML = "观目距离" + Dg1m.toFixed(2) + "主观侧观距离" + g1g2.toFixed(2);
-    singleWatch(parseFloat(document.getElementById('sgx0').value), parseFloat(document.getElementById('sgy0').value), xm, ym, parseFloat(document.getElementById('sgf').value), mainWatch.ToM, Dg1m);
+    singleWatch(parseFloat(document.getElementById('sgx0').value), parseFloat(document.getElementById('sgy0').value), get('sgx1'), get('sgy1'), parseFloat(document.getElementById('sgf').value), mainWatch.ToM, Dg1m);
 }
 
 
@@ -165,10 +162,10 @@ function correctboom() {
     var F = cacBasicFdirection(get('xzff'), get('xzfgm'));
     var j = Math.abs(F - get('xzfpm'));
     var B = get('xzdgm') / get('xzdpm');
-    var L = j / get('xzdgm');
+    var L = j / get('xzdpm');
     var corMil = 0;
     var corHigh = 0;
-    if (F > get('xzfgm'))//观在左
+    if (F > get('xzfpm'))//观在左
     {
         corMil = -get('xzori') * B - get('xzdis') * L;
         corHigh = -get('xzdis') * get('xzbb') / 100;
@@ -188,6 +185,13 @@ function get(name) {
 function anglechange(an) {
     if (an > 3000) {
         an = an - 3000;
+    }
+    return an;
+
+}
+function change(an) {
+    if (an > 6000) {
+        an = an - 6000;
     }
     return an;
 
@@ -217,7 +221,7 @@ function reverse(an) {
 function behind() {
     var con = conCaculate(get('bhxa'), get('bhya'), get('bhxb'), get('bhyb'));
     var angleA = changemag(reverse(get('bhcca')), get('bhcp')) - con[0];
-    var bc = cacside(get('bhcca')-get('bhccb'),con[1],angleA);
+    var bc = cacside(get('bhcca') - get('bhccb'), con[1], angleA);
     var cor = proCaculate(get('bhxb'), get('bhyb'), reverse(changemag(get('bhccb'), get('bhcp'))), bc);
     document.getElementById('content3').innerHTML = "C坐标X" + cor[0].toFixed(2) + "C坐标Y" + cor[1].toFixed(2);
 }
@@ -229,21 +233,13 @@ function polar() {
     document.getElementById('content3').innerHTML = '目标点坐标X' + cor[0].toFixed(2) + 'Y' + cor[1].toFixed(2) + '目标点高程' + hm.toFixed(2);
 }
 function lead() {
-    function change(an) {
-        if (an > 6000) {
-            an = an - 6000;
-            return an;
-        }
-        else {
-            return an;
-        }
-    }
 
-    var an1 = change(get('lena') + reverse(get('lef1')));
+
+    var an1 = change(get('lena') + get('lef1') - 3000);
     var cor1 = proCaculate(get('lexa'), get('leya'), an1, get('led1'));
-    an1 = change(an1 + reverse(get('lef2')));
+    an1 = change(an1 + get('lef2') - 3000);
     var cor2 = proCaculate(cor1[0], cor1[1], an1, get('led2'));
-    an1 = change(an1 + reverse(get('lef3')));
+    an1 = change(an1 + get('lef3') - 3000);
     var cor = proCaculate(cor2[0], cor2[1], an1, get('led3'));
     document.getElementById('content3').innerHTML = '目标坐标X' + cor[0].toFixed(2) + 'Y' + cor[1].toFixed(2);
 }

@@ -2489,7 +2489,7 @@ i.icon.icon-plus {
 }
 
 .content-block {
-    margin: 35px 0;
+    margin: 20px 0;
     padding: 0 15px;
     color: #6d6d72;
     box-sizing: border-box
@@ -3489,7 +3489,7 @@ html.ios-gt-8 .contacts-block .list-group-title {
 }
 
 .list-block .item-title.label {
-    width: 35%;
+    width: 25%;
     -webkit-flex-shrink: 0;
     -ms-flex: 0 0 auto;
     flex-shrink: 0

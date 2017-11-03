@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <title>My App</title>
@@ -11,293 +12,992 @@
     <link rel="stylesheet" href="css/framework7.ios.colors.min.css">
     <!-- Path to your custom app styles-->
     <link rel="stylesheet" href="css/my-app.css">
-      <script src="js/method.js"></script>
-  </head>
-  <body>
-  <div class="views tabs toolbar-through">
-      <div id="view-1" class="view view-main tab active">
-          <!-- Navbar on index page -->
-          <div class="navbar">
-              <div class="navbar-inner">
-                  <div class="left"></div>
-                  <div class="center" id="content1" style="white-space:pre-wrap;overflow: visible;line-height: 15px;">三小法</div>
-                  <div class="right"></div>
-                  <!-- Sub navbar -->
-                  <div class="subnavbar">
-                      <div class="buttons-row">
-                          <a href="#tab1" class="button tab-link active">三角边长</a>
-                          <a href="#tab2" class="button tab-link">正运算</a>
-                          <a href="#tab3" class="button tab-link">逆运算</a>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="pages navbar-through">
-              <!-- Pag has additional "with-subnavbar" class -->
-              <div data-page="home" class="page with-subnavbar">
-                  <div class="page-content hide-bars-on-scroll">
-                      <div class="tabs">
-                          <div id="tab1" class="tab active">
-                              <div>AB边长</div>
-                              <input type="number" id="dab">
-                              <div>角A</div>
-                              <input type="number" id="fa">
-                              <div>角B</div>
-                              <input type="number" id="fb">
-                              <button onclick="caculatetri()">计算</button>
-                          </div>
-                          <div id="tab2" class="tab">
-                              <div>A点坐标</div>
-                              <input type="number" id="xaaa">
-                              <input type="number" id="yaaa">
-                              <div>方位</div>
-                              <input type="number" id="fw">
-                              <div>距离</div>
-                              <input type="number" id="jl">
-                              <button onclick="caculatepro()">计算</button>
-                          </div>
-                          <div id="tab3" class="tab">
-                              <div>A点坐标</div>
-                              <input type="number" id="xaa">
-                              <input type="number" id="yaa">
-                              <div>B点坐标</div>
-                              <input type="number" id="xbb">
-                              <input type="number" id="ybb">
-                              <button onclick="caculatecon()">计算</button>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-      <div id="view-2" class="view tab">
-          <!-- Navbar on index page -->
-          <div class="navbar">
-              <div class="navbar-inner">
-                  <div class="left"></div>
-                  <div class="center" id="content2"style="white-space:pre-wrap;overflow: visible;line-height: 15px;">实弹射击</div>
-                  <div class="right"></div>
-                  <!-- Sub navbar -->
-                  <div class="subnavbar">
-                      <div class="buttons-row">
-                          <a href="#tab4" class="button tab-link active">单观</a>
-                          <a href="#tab5" class="button tab-link">双观</a>
-                          <a href="#tab6" class="button tab-link">炸点修正</a>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="pages navbar-through">
-              <!-- Pag has additional "with-subnavbar" class -->
-              <div data-page="home" class="page with-subnavbar">
-                  <div class="page-content hide-bars-on-scroll">
-                      <div class="tabs">
-                          <div id="tab4" class="tab active">
-                              <div>阵地坐标</div>
-                              <input type="number" id="dgx0">
-                              <input type="number" id="dgy0">
-                              <div>观察所坐标</div>
-                              <input type="number" id="dgx1">
-                              <input type="number" id="dgy1">
-                              <div>基准射向</div>
-                              <input type="number" id="dgf1">
-                              <div>观目分划</div>
-                              <input type="number" id="dgf2">
-                              <div>观目距离</div>
-                              <input type="number" id="dgd1">
-                              <div>阵地高程</div>
-                              <input type="number" id="dghp">
-                              <div>观察所高程</div>
-                              <input type="number" id="dghg">
-                              <div>目标点高低分划</div>
-                              <input type="number" id="dghm">
-                              <button onclick="singleWatchex()">点击这里</button>
-                          </div>
-                          <div id="tab5" class="tab">
-                              <div>阵地坐标</div>
-                              <input type="number" id="sgx0">
-                              <input type="number" id="sgy0">
-                              <div>已知点坐标</div>
-                              <input type="number" id="sgx1">
-                              <input type="number" id="sgy1">
-                              <div>基准射向</div>
-                              <input type="number" id="sgf">
-                              <div>主观到目标点</div>
-                              <input type="number" id="sgfg1m">
-                              <div>直觇</div>
-                              <input type="number" id="sgfg1g2">
-                              <div>主观到标杆</div>
-                              <input type="number" id="sgfg1b">
-                              <div>主观到已知点</div>
-                              <input type="number" id="sgfg1o">
-                              <div>侧观到目标点</div>
-                              <input type="number" id="sgrg2m">
-                              <div>反觇</div>
-                              <input type="number" id="sgrg2g1">
-                              <div>侧观到标杆</div>
-                              <input type="number" id="sgrg2b">
-                              <div>侧观到已知点</div>
-                              <input type="number" id="sgrg2o">
-                              <div>标杆到主观距离</div>
-                              <input type="number" id="sgdo">
-                              <div>阵地高程</div>
-                              <input type="number" id="sghp">
-                              <div>观察所高程</div>
-                              <input type="number" id="sghg">
-                              <div>目标点高低分划</div>
-                              <input type="number" id="sghm">
+    <script src="js/method.js"></script>
+</head>
+<body>
+<div class="views tabs toolbar-through">
+    <div id="view-1" class="view view-main tab active">
+        <!-- Navbar on index page -->
+        <div class="navbar">
+            <div class="navbar-inner">
+                <div class="left"></div>
+                <div class="center" id="content1" style="white-space:pre-wrap;overflow: visible;line-height: 15px;">
+                    三小法
+                </div>
+                <div class="right"></div>
+                <!-- Sub navbar -->
+                <div class="subnavbar">
+                    <div class="buttons-row">
+                        <a href="#tab1" class="button tab-link active">三角边长</a>
+                        <a href="#tab2" class="button tab-link">正运算</a>
+                        <a href="#tab3" class="button tab-link">逆运算</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pages navbar-through">
+            <!-- Pag has additional "with-subnavbar" class -->
+            <div data-page="home" class="page with-subnavbar">
+                <div class="page-content hide-bars-on-scroll">
+                    <div class="tabs">
+                        <div id="tab1" class="tab active">
+                            <div class="list-block">
+                                <ul>
+                                    <li>
+                                        <div class="item-content">
 
-                              <button onclick="doubleWatch()">点击这里</button>
-                          </div>
-                          <div id="tab6" class="tab">
-                              <div>基准射向</div>
-                              <input type="number" id="xzff">
-                              <div>高变</div>
-                              <input type="number" id="xzgb">
-                              <div>百变</div>
-                              <input type="number" id="xzbb">
-                              <div>观目方向</div>
-                              <input type="number" id="xzfgm">
-                              <div>炮目方向</div>
-                              <input type="number" id="xzfpm">
-                              <div>观目距离</div>
-                              <input type="number" id="xzdgm">
-                              <div>炮目距离</div>
-                              <input type="number" id="xzdpm">
-                              <div>距离偏差</div>
-                              <input type="number" id="xzdis">
-                              <div>方向偏差</div>
-                              <input type="number" id="xzori">
-                              <button onclick="correctboom()">炸点修正计算</button>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-      <div id="view-3" class="view tab">
-          <!-- Navbar on index page -->
-          <div class="navbar">
-              <div class="navbar-inner">
-                  <div class="left"></div>
-                  <div class="center" id="content3" style="white-space:pre-wrap;overflow: visible;line-height: 15px;">更多算法</div>
-                  <div class="right"></div>
-                  <!-- Sub navbar -->
-                  <div class="subnavbar">
-                      <div class="buttons-row">
-                          <a href="#tab7" class="button tab-link active" style="font-size:10px">相互定向</a>
-                          <a href="#tab8" class="button tab-link" style="font-size:10px">两点后方</a>
-                          <a href="#tab9" class="button tab-link" style="font-size:10px">基准射向</a>
-                          <a href="#tab10" class="button tab-link" style="font-size:10px">展开导线</a>
-                          <a href="#tab11" class="button tab-link" style="font-size:10px">极距法</a>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="pages navbar-through">
-              <!-- Pag has additional "with-subnavbar" class -->
-              <div data-page="home" class="page with-subnavbar">
-                  <div class="page-content hide-bars-on-scroll">
-                      <div class="tabs">
-                          <div id="tab7" class="tab active">
-                              <div>主观坐标</div>
-                              <input type="number" id="muxz">
-                              <input type="number" id="muyz">
-                              <div>基线长</div>
-                              <input type="number" id="mujxc">
-                              <div>基线方位</div>
-                              <input type="number" id="mujxfw">
-                              <div>主观分划</div>
-                              <input type="number" id="muzg">
-                              <div>侧观分划</div>
-                              <input type="number" id="mucg">
-                              <button onclick="mutual()">点击这里</button>
-                          </div>
-                          <div id="tab8" class="tab">
-                              <div>A点坐标</div>
-                              <input type="number" id="bhxa">
-                              <input type="number" id="bhya">
-                              <div>B点坐标</div>
-                              <input type="number" id="bhxb">
-                              <input type="number" id="bhyb">
-                              <div>C-A磁方位</div>
-                              <input type="number" id="bhcca">
-                              <div>C-B磁方位</div>
-                              <input type="number" id="bhccb">
-                              <div>磁偏</div>
-                              <input type="number" id="bhcp">
-                              <button onclick="behind()">点击这里</button>
-                          </div>
-                          <div id="tab9" class="tab">
-                              <div>基准射向J</div>
-                              <input type="number" id="bdjzsx">
-                              <div>观察所坐标G</div>
-                              <input type="number" id="bdxg">
-                              <input type="number" id="bdyg">
-                              <div>基线长DJ</div>
-                              <input type="number" id="bdjxc">
-                              <div>直觇β</div>
-                              <input type="number" id="bdzc">
-                              <div>主观分划Z</div>
-                              <input type="number" id="bdfzg">
-                              <div>侧观分划C</div>
-                              <input type="number" id="bdfcg">
-                              <button onclick="basicdirection()">点击这里</button>
-                          </div>
-                          <div id="tab10" class="tab">
-                              <div>A点坐标</div>
-                              <input type="number" id="lexa">
-                              <input type="number" id="leya">
-                              <div>N-A</div>
-                              <input type="number" id="lena">
+                                            <div class="item-inner">
+                                                <div class="item-title label">AB边长</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="dab" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">角A</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="fa" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
 
-                              <div>分划一</div>
-                              <input type="number" id="lef1">
-                              <div>距离一</div>
-                              <input type="number" id="led1">
-                              <div>分划二</div>
-                              <input type="number" id="lef2">
-                              <div>距离二</div>
-                              <input type="number" id="led2">
-                              <div>分划三</div>
-                              <input type="number" id="lef3">
-                              <div>距离三</div>
-                              <input type="number" id="led3">
-                              <button onclick="lead()">点击这里</button>
-                          </div>
-                          <div id="tab11" class="tab">
-                              <div>观察所坐标G</div>
-                              <input type="number" id="poxg">
-                              <input type="number" id="poyg">
-                              <div>基准射向</div>
-                              <input type="number" id="pojzsx">
-                              <div>观目分划Gm</div>
-                              <input type="number" id="pofgm">
-                              <div>观察所高程HG</div>
-                              <input type="number" id="pohg">
-                              <div>高低角ε</div>
-                              <input type="number" id="pogd">
-                              <div>观目距离DGM</div>
-                              <input type="number" id="podgm">
-                              <button onclick="polar()">点击这里</button>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-      <!-- Bottom Tabbar-->>
-      <div class="toolbar tabbar tabbar-labels">
-          <div class="toolbar-inner">
-              <a href="#view-1" class="tab-link active"> <i class="icon tabbar-demo-icon-1"></i><span class="tabbar-label">三小法</span></a>
-              <a href="#view-2" class="tab-link"><i class="icon tabbar-demo-icon-2"></i><span class="tabbar-label">实弹射击</span></a>
-              <a href="#view-3" class="tab-link"> <i class="icon tabbar-demo-icon-3"></i><span class="tabbar-label">更多算法</span></a>
-          </div>
-      </div>
-  </div>
-  <!-- Path to Framework7 Library JS-->
-    <script type="text/javascript" src="js/framework7.min.js"></script>
-    <!-- Path to your app js-->
-    <script type="text/javascript" src="js/my-app.js"></script>
-  </body>
+                                            <div class="item-inner">
+                                                <div class="item-title label">角B</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="fb" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="content-block">
+                                <a href="#" onclick="caculatetri()" class="button">开始计算</a>
+                            </div>
+                        </div>
+                        <div id="tab2" class="tab">
+                            <div class="list-block">
+                                <ul>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">A点坐标</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="xaaa" placeholder="X坐标">
+
+                                                    <div class="item-media"><i class="icon icon-form-name"></i></div>
+                                                    <input type="number" id="yaaa" placeholder="Y坐标">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">方位</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="fw" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">距离</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="jl" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="content-block">
+                                <a href="#" onclick="caculatepro()" class="button">开始计算</a>
+                            </div>
+                        </div>
+                        <div id="tab3" class="tab">
+                            <div class="list-block">
+                                <ul>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">A点坐标</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="xaa" placeholder="X坐标">
+
+                                                    <div class="item-media"><i class="icon icon-form-name"></i></div>
+                                                    <input type="number" id="yaa" placeholder="Y坐标">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">B点坐标</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="xbb" placeholder="X坐标">
+
+                                                    <div class="item-media"><i class="icon icon-form-name"></i></div>
+                                                    <input type="number" id="ybb" placeholder="Y坐标">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="content-block">
+                                <a href="#" onclick="caculatecon()" class="button">开始计算</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="view-2" class="view tab">
+        <!-- Navbar on index page -->
+        <div class="navbar">
+            <div class="navbar-inner">
+                <div class="left"></div>
+                <div class="center" id="content2" style="white-space:pre-wrap;overflow: visible;line-height: 15px;">
+                    实弹射击
+                </div>
+                <div class="right"></div>
+                <!-- Sub navbar -->
+                <div class="subnavbar">
+                    <div class="buttons-row">
+                        <a href="#tab4" class="button tab-link active">单观</a>
+                        <a href="#tab5" class="button tab-link">双观</a>
+                        <a href="#tab6" class="button tab-link">炸点修正</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pages navbar-through">
+            <!-- Pag has additional "with-subnavbar" class -->
+            <div data-page="home" class="page with-subnavbar">
+                <div class="page-content hide-bars-on-scroll">
+                    <div class="tabs">
+                        <div id="tab4" class="tab active">
+                            <div class="list-block">
+                                <ul>
+                                    <li>
+                                        <div class="item-content">
+
+                                            <div class="item-inner">
+                                                <div class="item-title label">阵地坐标</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="dgx0" placeholder="X坐标">
+
+                                                    <div class="item-media"><i class="icon icon-form-name"></i></div>
+                                                    <input type="number" id="dgy0" placeholder="Y坐标">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                    <li>
+                                        <div class="item-content">
+
+                                            <div class="item-inner">
+                                                <div class="item-title label">观察所坐标</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="dgx1" placeholder="X坐标">
+
+                                                    <div class="item-media"><i class="icon icon-form-name"></i></div>
+                                                    <input type="number" id="dgy1" placeholder="Y坐标">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+
+                                            <div class="item-inner">
+                                                <div class="item-title label">基准射向</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="dgf1" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+
+                                            <div class="item-inner">
+                                                <div class="item-title label">观目分划</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="dgf2" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+
+                                            <div class="item-inner">
+                                                <div class="item-title label">观目距离</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="dgd1" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+
+                                            <div class="item-inner">
+                                                <div class="item-title label">阵地高程</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="dghp" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+
+                                            <div class="item-inner">
+                                                <div class="item-title label">观察所高程</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="dghg" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+
+                                            <div class="item-inner">
+                                                <div class="item-title label">目标点高低</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="dghm" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="content-block">
+                                <a href="#" onclick="singleWatchex()" class="button">开始计算</a>
+                            </div>
+                        </div>
+                        <div id="tab5" class="tab">
+                            <div class="list-block">
+                                <ul>
+                                    <li>
+                                        <div class="item-content">
+
+                                            <div class="item-inner">
+                                                <div class="item-title label">阵地坐标</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="sgx0" placeholder="X坐标">
+
+                                                    <div class="item-media"><i class="icon icon-form-name"></i></div>
+                                                    <input type="number" id="sgy0" placeholder="Y坐标">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+
+                                            <div class="item-inner">
+                                                <div class="item-title label">已知点坐标</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="sgx1" placeholder="X坐标">
+
+                                                    <div class="item-media"><i class="icon icon-form-name"></i></div>
+                                                    <input type="number" id="sgy1" placeholder="Y坐标">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+
+                                            <div class="item-inner">
+                                                <div class="item-title label">基准射向</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="sgf" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <div class="item-content">
+
+                                            <div class="item-inner">
+                                                <div class="item-title label">主观到目标点</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="sgfg1m" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+
+
+                                    <li>
+                                        <div class="item-content">
+
+                                            <div class="item-inner">
+                                                <div class="item-title label">直觇</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="sgfg1g2" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+
+                                            <div class="item-inner">
+                                                <div class="item-title label">主观到目标点</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="sgfg1b" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+
+                                            <div class="item-inner">
+                                                <div class="item-title label">主观到已知点</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="sgfg1o" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+
+                                            <div class="item-inner">
+                                                <div class="item-title label">侧观到目标点</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="sgrg2m" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+
+                                            <div class="item-inner">
+                                                <div class="item-title label">反觇</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="sgrg2g1" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+
+                                            <div class="item-inner">
+                                                <div class="item-title label">侧观到标杆</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="sgrg2b" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+
+                                            <div class="item-inner">
+                                                <div class="item-title label">侧观到已知点</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="sgrg2o" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+
+                                            <div class="item-inner">
+                                                <div class="item-title label">标杆主观距离</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="sgdo" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+
+                                            <div class="item-inner">
+                                                <div class="item-title label">阵地高程</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="sghp" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+
+                                            <div class="item-inner">
+                                                <div class="item-title label">观察所高程</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="sghg" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+
+                                            <div class="item-inner">
+                                                <div class="item-title label">主观高低分划</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="sghm" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="content-block">
+                                <a href="#" onclick="doubleWatch()" class="button">开始计算</a>
+                            </div>
+                        </div>
+                        <div id="tab6" class="tab">
+                            <div class="list-block">
+                                <ul>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">基准射向</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="xzff" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">高变</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="xzgb" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">百变</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="xzbb" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">观目方向</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="xzfgm" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">炮目方向</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="xzfpm" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+
+                                            <div class="item-inner">
+                                                <div class="item-title label">观目距离</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="xzdgm" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">炮目距离</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="xzdpm" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">距离偏差</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="xzdis" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">方向偏差</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="xzori" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="content-block">
+                                <a href="#" onclick="correctboom()" class="button">开始计算</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="view-3" class="view tab">
+        <!-- Navbar on index page -->
+        <div class="navbar">
+            <div class="navbar-inner">
+                <div class="left"></div>
+                <div class="center" id="content3" style="white-space:pre-wrap;overflow: visible;line-height: 15px;">
+                    更多算法
+                </div>
+                <div class="right"></div>
+                <!-- Sub navbar -->
+                <div class="subnavbar">
+                    <div class="buttons-row">
+                        <a href="#tab7" class="button tab-link active" style="font-size:10px">相互定向</a>
+                        <a href="#tab8" class="button tab-link" style="font-size:10px">两点后方</a>
+                        <a href="#tab9" class="button tab-link" style="font-size:10px">基准射向</a>
+                        <a href="#tab10" class="button tab-link" style="font-size:10px">展开导线</a>
+                        <a href="#tab11" class="button tab-link" style="font-size:10px">极距法</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pages navbar-through">
+            <!-- Pag has additional "with-subnavbar" class -->
+            <div data-page="home" class="page with-subnavbar">
+                <div class="page-content hide-bars-on-scroll">
+                    <div class="tabs">
+                        <div id="tab7" class="tab active">
+                            <div class="list-block">
+                                <ul>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">主观坐标</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="muxz" placeholder="X坐标">
+
+                                                    <div class="item-media"><i class="icon icon-form-name"></i></div>
+                                                    <input type="number" id="muyz" placeholder="Y坐标">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">基线长</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="mujxc" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">基线方位</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="mujxfw" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">主观分划</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="muzg" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">侧观分划</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="mucg" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="content-block">
+                                <a href="#" onclick="mutual()" class="button">开始计算</a>
+                            </div>
+                        </div>
+                        <div id="tab8" class="tab">
+                            <div class="list-block">
+                                <ul>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">A点坐标</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="bhxa" placeholder="X坐标">
+
+                                                    <div class="item-media"><i class="icon icon-form-name"></i></div>
+                                                    <input type="number" id="bhya" placeholder="Y坐标">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">B点坐标</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="bhxb" placeholder="X坐标">
+
+                                                    <div class="item-media"><i class="icon icon-form-name"></i></div>
+                                                    <input type="number" id="bhyb" placeholder="Y坐标">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">C-A磁方位</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="bhcca" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">C-B磁方位</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="bhccb" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">磁偏</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="bhcp" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="content-block">
+                                <a href="#" onclick="behind()" class="button">开始计算</a>
+                            </div>
+                        </div>
+                        <div id="tab9" class="tab">
+                            <div class="list-block">
+                                <ul>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">基准射向</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="bdjzsx" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">观察所坐标G</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="bdxg" placeholder="X坐标">
+
+                                                    <div class="item-media"><i class="icon icon-form-name"></i></div>
+                                                    <input type="number" id="bdyg" placeholder="Y坐标">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">基线长DJ</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="bdjxc" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">直觇β</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="bdzc" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">主观分划Z</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="bdfzg" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">侧观分划C</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="bdfcg" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="content-block">
+                                <a href="#" onclick="basicdirection()" class="button">开始计算</a>
+                            </div>
+                        </div>
+                        <div id="tab10" class="tab">
+                            <div class="list-block">
+                                <ul>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">A点坐标</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="lexa" placeholder="X坐标">
+
+                                                    <div class="item-media"><i class="icon icon-form-name"></i></div>
+                                                    <input type="number" id="leya" placeholder="Y坐标">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">基准方向N-A</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="lena" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">分划一</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="lef1" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">距离一</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="led1" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">分划二</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="lef2" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">距离二</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="led2" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">分划三</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="lef3" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">距离三</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="led3" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="content-block">
+                                <a href="#" onclick="lead()" class="button">开始计算</a>
+                            </div>
+                        </div>
+                        <div id="tab11" class="tab">
+                            <div class="list-block">
+                                <ul>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">观察所坐标G</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="poxg" placeholder="X坐标">
+
+                                                    <div class="item-media"><i class="icon icon-form-name"></i></div>
+                                                    <input type="number" id="poyg" placeholder="Y坐标">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">基准射向</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="pojzsx" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">观目分划Gm</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="pofgm" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">观目分划Gm</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="pofgm" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">观察所高程HG</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="pohg" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">高低角ε</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="pogd" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">观目距离DGM</div>
+                                                <div class="item-input">
+                                                    <input type="number" id="podgm" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="content-block">
+                                <a href="#" onclick="polar()" class="button">开始计算</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bottom Tabbar-->>
+    <div class="toolbar tabbar tabbar-labels">
+        <div class="toolbar-inner">
+            <a href="#view-1" class="tab-link active"> <i class="icon tabbar-demo-icon-1"></i><span
+                    class="tabbar-label">三小法</span></a>
+            <a href="#view-2" class="tab-link"><i class="icon tabbar-demo-icon-2"></i><span
+                    class="tabbar-label">实弹射击</span></a>
+            <a href="#view-3" class="tab-link"> <i class="icon tabbar-demo-icon-3"></i><span
+                    class="tabbar-label">更多算法</span></a>
+        </div>
+    </div>
+</div>
+<!-- Path to Framework7 Library JS-->
+<script type="text/javascript" src="js/framework7.min.js"></script>
+<!-- Path to your app js-->
+<script type="text/javascript" src="js/my-app.js"></script>
+</body>
 </html>

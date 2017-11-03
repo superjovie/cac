@@ -6,74 +6,36 @@
     <script src="js/artyom.js"></script>
     <script>
         function hello() {
+            const artyom = new Artyom();
+// This function activates artyom and will listen and execute only 1 command (for http connections)
+            artyom.addCommands([
+                {
+                    indexes:["Hello"],
+                    action:function(){
+                        alert("Hey, how are you");
+                    }
+                }
+            ]);
 
+// This function activates artyom and will listen all that you say forever (requires https conection, otherwise a dialog will request if you allow the use of the microphone)
 
-var artyom = new Artyom();
+                artyom.fatality();// use this to stop any of
 
-artyom.on(['Good morning','Good afternoon']).then((i) => {
-    switch (i) {
-        case 0:
-            artyom.say("Good morning, how are you?");
-        break;
-        case 1:
-            artyom.say("Good afternoon, how are you?");
-        break;            
-    }
-});
+                setTimeout(function(){// if you use artyom.fatality , wait 250 ms to initialize again.
+                    artyom.initialize({
+                        lang:"en-GB",// A lot of languages are supported. Read the docs !
+                        continuous:true,// Artyom will listen forever
+                        listen:true, // Start recognizing
+                        debug:true, // Show everything in the console
+                        speed:1 // talk normally
+                    }).then(function(){
+                        console.log("Ready to work !");
+                    });
+                },250);
 
-
-artyom.addCommands([
-    {
-        indexes: ['Hello','Hi','is someone there'],
-        action: (i) => {
-            artyom.say("Hello, it's me");
+            artyom.simulateInstruction("Hello");
         }
-    },
-    {
-        indexes: ['Repeat after me *'],
-        smart:true,
-        action: (i,wildcard) => {
-            artyom.say("You've said : "+ wildcard);
-        }
-    },
-    
-    {
-        indexes: [/Good Morning/i],
-        smart:true,
-        action: (i,wildcard) => {
-            artyom.say("You've said : "+ wildcard);
-        }
-    },
-    {
-        indexes: ['shut down yourself'],
-        action: (i,wildcard) => {
-            artyom.fatality().then(() => {
-                console.log("Artyom succesfully stopped");
-            });
-        }
-    },
-]);
-
-setTimeout(function(){
-artyom.initialize({
-    lang: "en-GB", // GreatBritain english
-    continuous: true, // Listen forever
-    soundex: true,// Use the soundex algorithm to increase accuracy
-    debug: true, // Show messages in the console
-    executionKeyword: "and do it now",
-    listen: true, // Start to listen commands !
-
-    // If providen, you can only trigger a command if you say its name
-    // e.g to trigger Good Morning, you need to say "Jarvis Good Morning"
-    name: "Jarvis" 
-}).then(() => {
-    console.log("Artyom has been succesfully initialized");
-}).catch((err) => {
-    console.error("Artyom couldn't be initialized: ", err);
-});
-
-}
-</script>
+    </script>
 </head>
 <body>
 <button onclick="hello()">hello</button>
