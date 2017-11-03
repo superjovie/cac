@@ -3489,7 +3489,7 @@ html.ios-gt-8 .contacts-block .list-group-title {
 }
 
 .list-block .item-title.label {
-    width: 25%;
+    width: 35%;
     -webkit-flex-shrink: 0;
     -ms-flex: 0 0 auto;
     flex-shrink: 0
