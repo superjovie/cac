@@ -221,7 +221,7 @@ function reverse(an) {
 function behind() {
     var con = conCaculate(get('bhxa'), get('bhya'), get('bhxb'), get('bhyb'));
     var angleA = changemag(reverse(get('bhcca')), get('bhcp')) - con[0];
-    var bc = cacside(get('bhcca') - get('bhccb'), con[1], angleA);
+    var bc = cacside(get('bhcca')-get('bhccb'),con[1],angleA);
     var cor = proCaculate(get('bhxb'), get('bhyb'), reverse(changemag(get('bhccb'), get('bhcp'))), bc);
     document.getElementById('content3').innerHTML = "C坐标X" + cor[0].toFixed(2) + "C坐标Y" + cor[1].toFixed(2);
 }
@@ -235,11 +235,11 @@ function polar() {
 function lead() {
 
 
-    var an1 = change(get('lena') + get('lef1') - 3000);
+    var an1 = change(get('lena') + get('lef1')-3000);
     var cor1 = proCaculate(get('lexa'), get('leya'), an1, get('led1'));
-    an1 = change(an1 + get('lef2') - 3000);
+    an1 = change(an1 + get('lef2')-3000);
     var cor2 = proCaculate(cor1[0], cor1[1], an1, get('led2'));
-    an1 = change(an1 + get('lef3') - 3000);
+    an1 = change(an1 + get('lef3')-3000);
     var cor = proCaculate(cor2[0], cor2[1], an1, get('led3'));
     document.getElementById('content3').innerHTML = '目标坐标X' + cor[0].toFixed(2) + 'Y' + cor[1].toFixed(2);
 }
