@@ -7,8 +7,8 @@ function randombehind()
 var cora=newcor(); var corb=newcor(); var corc=newcor();
 function newcp(){var cp = 100*Math.random();return cp;}
 var cp = newcp();
-var ca = conCaculate(corc[0], corc[1], cora[0], cora[1],);
-var cb = conCaculate(corc[0], corc[1], corb[0], corb[1],);
+var ca = conCaculate(corc[0], corc[1], cora[0], cora[1])[0];
+var cb = conCaculate(corc[0], corc[1], corb[0], corb[1])[0];
 ca=ca-cp;cb=cb-cp;
 set('bhxa',cora[0]); set('bhya',cora[1]); set('bhxb',corb[0]);
 set('bhyb',corb[1]); set('bhcca',ca); set('bhccb',cb); set('bhcp',cp);
