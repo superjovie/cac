@@ -8,7 +8,7 @@ var fgm=3000+1000*Math.random()-500;
 var fpm=bd*100+1000*Math.random()-500;
 var d = 10000*Math.random();
 var corm=proCaculate(corp[0],corp[1],fpm,d);
-var corg=new Array(corm[0]+6000*Math.random()-3000, corm[1]+6000*Math.random()-3000);
+var corg=proCaculate(corm[0],corm[1],reverse(cacBasicFdirection(jzsx,fgm)),d);
 var corb=new Array(corg[0]+100*Math.random()-50, corg[1]+100*Math.random()-50);
 var coro=new Array(corg[0]+3000*Math.random()-1500, corg[1]+3000*Math.random()-1500);
 var corc=new Array(corg[0]+2000*Math.random()-1000, corg[1]+2000*Math.random()-1000);
@@ -22,12 +22,10 @@ var rcm = comCaculate(corc[0],corc[1],corm[0],corn[1])[0];
 function becamebasic(r,a){a = 3000-(a-r);return a;}
 rcm=becamebasic(jzsx,rcm);
 rco=becamebasic(jzsx,rco);
-rcg=becamebasic(jzsx,rcg);
 rcb=becamebasic(jzsx,rcb);
 fgo=becamebasic(jzsx,fgo);
 fgc=becamebasic(jzsx,fgc);
 fgb=becamebasic(jzsx,fgb);
-rgm=becamebasic(jzsx,fgm);
 
 var rcg = reverse(fgc);
 set('sgx0',corp[0].toFixed(1));
