@@ -44,6 +44,15 @@ function caculatetri() {
     document.getElementById('content1').innerHTML = "BC长为" + end[0].toFixed(2) + "AC长为" + end[1].toFixed(2);
 
 }
+function cacbetween(a, b) {
+    a = Math.abs(a);
+    b = Math.abs(b);
+    if (a > b) {a = a-b;
+if(a>3000){a=a-3000;}}
+else{a = b-a; 
+if(a>3000){a=a-3000}}
+return a;
+    }
 function cacTreangleSide(a, b, AB) {
     a = Math.abs(a);
     b = Math.abs(b);
@@ -220,10 +229,13 @@ function reverse(an) {
 }
 function behind() {
     var con = conCaculate(get('bhxa'), get('bhya'), get('bhxb'), get('bhyb'));
+if(cacbetween(get('bhcca'),reverse(con[0]) )+ cacbetween(get('bhccb'), con[0])>=3000)
+{document.getElementById('content3').innerHTML = "磁方位角错误" ;}
+else{
     var angleA = changemag(reverse(get('bhcca')), get('bhcp')) - con[0];
     var bc = cacside(get('bhcca')-get('bhccb'),con[1],angleA);
     var cor = proCaculate(get('bhxb'), get('bhyb'), reverse(changemag(get('bhccb'), get('bhcp'))), bc);
-    document.getElementById('content3').innerHTML = "C坐标X" + cor[0].toFixed(2) + "C坐标Y" + cor[1].toFixed(2);
+    document.getElementById('content3').innerHTML = "C坐标X" + cor[0].toFixed(2) + "C坐标Y" + cor[1].toFixed(2);}
 }
 function polar() {
     var height = get('podgm') * Math.sin(changeMilToRad(get('pogd')));
