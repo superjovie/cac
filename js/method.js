@@ -17,7 +17,10 @@ set('mucg',cg.toFixed(1));
 }
 function randombehind()
 {
-var cora=newcor(); var corb=newcor(); var corc=newcor();
+var cora=newcor(); var corb=new Array;
+corb[0]=cora[0]+10000*Math.random()-5000; 
+corb[1]=cora[1]+10000*Math.random()-5000; 
+var corc=newcor();
 function newcp(){var cp = 100*Math.random();return cp;}
 var cp = newcp();
 var ca = conCaculate(corc[0], corc[1], cora[0], cora[1])[0];
