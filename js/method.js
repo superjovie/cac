@@ -4,8 +4,49 @@ function randondw()
 {
 var corp=newcor();
 var bd=60*Math.random();var jzsx=Math.floor(bd)*100;
-var fw=bd*100+1000*Math.random()-500;var d = 10000*Math.random();
-corm=proCaculae();
+var fgm=3000+1000*Math.random()-500;
+var fpm=bd*100+1000*Math.random()-500;
+var d = 10000*Math.random();
+var corm=proCaculate(corp[0],corp[1],fpm,d);
+var corg=new Array(corm[0]+6000*Math.random()-3000, corm[1]+6000*Math.random()-3000);
+var corb=new Array(corg[0]+100*Math.random()-50, corg[1]+100*Math.random()-50);
+var coro=new Array(corg[0]+3000*Math.random()-1500, corg[1]+3000*Math.random()-1500);
+var corc=new Array(corg[0]+2000*Math.random()-1000, corg[1]+2000*Math.random()-1000);
+var fgb = comCaculate(corg[0],corg[1],corb[0],corb[1])[0];
+var dgb = comCaculate(corg[0],corg[1],corb[0],corb[1])[1];
+var fgc = comCaculate(corg[0],corg[1],corc[0],corc[1])[0];
+var fgo = comCaculate(corg[0],corg[1],coro[0],coro[1])[0];
+var rcb = comCaculate(corc[0],corc[1],corb[0],corb[1])[0];
+var rco = comCaculate(corc[0],corc[1],coro[0],coro[1])[0];
+var rcm = comCaculate(corc[0],corc[1],corm[0],corn[1])[0];
+function becamebasic(r,a){a = 3000-(a-r);return a;}
+rcm=becamebasic(jzsx,rcm);
+rco=becamebasic(jzsx,rco);
+rcg=becamebasic(jzsx,rcg);
+rcb=becamebasic(jzsx,rcb);
+fgo=becamebasic(jzsx,fgo);
+fgc=becamebasic(jzsx,fgc);
+fgb=becamebasic(jzsx,fgb);
+rgm=becamebasic(jzsx,fgm);
+
+var rcg = reverse(fgc);
+set('sgx0',corp[0].toFixed(1));
+set('sgy0',corp[1].toFixed(1));
+set('sgx1',coro[0].toFixed(1));
+set('sgy1',coro[1].toFixed(1));
+set('sgf',jzsx.toFixed(1));
+set('sgfg1g2',fgc.toFixed(1));
+set('sgfg1m',fgm.toFixed(1));
+set('sgfg1o',fgo.toFixed(1));
+set('sgfg1b',fgb.toFixed(1));
+set('sgdo',dgb.toFixed(1));
+set('sgrg2g1',rcg.toFixed(1));
+set('sgrg2o',rco.toFixed(1));
+set('sgrg2b',rcb.toFixed(1));
+set('sgrg2m',rcm.toFixed(1));
+document.getElementById('content3').innerHTML = "观察所坐标"+corm[0].toFixed(1)+ ","+corm[1].toFixed(1);
+
+
 }
 function newcor()
 {var cor = new Array(100000*Math.random(), 100000*Math.random());return cor;}
