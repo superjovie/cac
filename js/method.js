@@ -1,5 +1,12 @@
 var xx0, yy0, xx1, yy1, ff1, ff2, dd1 = 0;
 var vx0, vy0, vx1, vy1, vF, vfg1m, vfg1g2, vfg1b, vfg1o, vrg2o, vrg2m, vrg2b, vrg2g1, vDo = 0;
+function randondw()
+{
+var corp=newcor();
+var bd=60*Math.random();var jzsx=Math.floor(bd)*100;
+var fw=bd*100+1000*Math.random()-500;var d = 10000*Math.random();
+corm=proCaculae();
+}
 function newcor()
 {var cor = new Array(100000*Math.random(), 100000*Math.random());return cor;}
 function randommutual()
