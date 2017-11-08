@@ -48,9 +48,9 @@ function cacbetween(a, b) {
     a = Math.abs(a);
     b = Math.abs(b);
     if (a > b) {a = a-b;
-if(a>3000){a=a-3000;}}
+if(a>3000){a=6000-a;}}
 else{a = b-a; 
-if(a>3000){a=a-3000}}
+if(a>3000){a=6000-a;}}
 return a;
     }
 function cacTreangleSide(a, b, AB) {
