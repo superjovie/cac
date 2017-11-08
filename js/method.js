@@ -10,8 +10,8 @@ var cp = newcp();
 var ca = conCaculate(corc[0], corc[1], cora[0], cora[1])[0];
 var cb = conCaculate(corc[0], corc[1], corb[0], corb[1])[0] ;
 ca=ca-cp;cb=cb-cp;
-set('bhxa',cora[0] .toFixed(1)); set('bhya',cora[1] .toFixed(1)); set('bhxb',corb[0] .toFixed(1));
-set('bhyb',corb[1] .toFixed(1)); set('bhcca',ca .toFixed(1)); set('bhccb',cb .toFixed(1)); set('bhcp',cp .toFixed(1));
+set('bhxa',cora[0].toFixed(1)); set('bhya',cora[1].toFixed(1)); set('bhxb',corb[0].toFixed(1));
+set('bhyb',corb[1].toFixed(1)); set('bhcca',ca.toFixed(1)); set('bhccb',cb.toFixed(1)); set('bhcp',cp.toFixed(1));
 }
 function set(id,x)
 {document.getElementById(id).value = x;}
