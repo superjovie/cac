@@ -4,7 +4,11 @@ function newcor()
 {var cor = new Array(100000*Math.random(), 100000*Math.random());return cor;}
 function randommutual()
 {
-var coro=newcor(); var corz=newcor(); var corc=newcor();
+var corz=newcor(); var corc=new Array;var coro=new Array;
+corc[0]=corz[0]+1000*Math.random()-500; 
+corc[1]=corz[1]+1000*Math.random()-500; 
+coro[0]=corz[0]+10000*Math.random()-5000; 
+coro[1]=corz[1]+10000*Math.random()-5000; 
 var jx=conCaculate(corz[0], corz[1], corc[0], corc[1]);
 var zg=conCaculate(corz[0], corz[1], coro[0], coro[1])[0];
 var cg=conCaculate(corc[0], corc[1], coro[0], coro[1])[0];
