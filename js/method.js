@@ -229,7 +229,7 @@ function reverse(an) {
 }
 function behind() {
     var con = conCaculate(get('bhxa'), get('bhya'), get('bhxb'), get('bhyb'));
-if(cacbetween(get('bhcca')+get('bhcp'),reverse(con[0]) )+ cacbetween(get('bhccb')+get( 'bhcp'), con[0])>3000-cacbetween(get('bhcca'),get('bhccb')))
+if(cacbetween(get('bhcca')+get('bhcp'),reverse(con[0]) )+ cacbetween(get('bhccb')+get( 'bhcp'), con[0])+cacbetween(get('bhcca'),get('bhccb'))>3000)
 {document.getElementById('content3').innerHTML = "磁方位角错误" ;}
 else{
     var angleA = changemag(reverse(get('bhcca')), get('bhcp')) - con[0];
