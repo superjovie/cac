@@ -13,7 +13,7 @@ ca=ca-cp;cb=cb-cp;
 set('bhxa',cora[0]); set('bhya',cora[1]); set('bhxb',corb[0]);
 set('bhyb',corb[1]); set('bhcca',ca); set('bhccb',cb); set('bhcp',cp);
 }
-function setValue(id,x)
+function set(id,x)
 {document.getElementById(id).value = x;}
 function cacHightEffect(hight, dis) {
     dis = Math.sqrt(Math.abs(Math.pow(dis, 2) - Math.pow(height, 2)));
