@@ -2,6 +2,19 @@ var xx0, yy0, xx1, yy1, ff1, ff2, dd1 = 0;
 var vx0, vy0, vx1, vy1, vF, vfg1m, vfg1g2, vfg1b, vfg1o, vrg2o, vrg2m, vrg2b, vrg2g1, vDo = 0;
 function newcor()
 {var cor = new Array(100000*Math.random(), 100000*Math.random());return cor;}
+function randommutual()
+{
+var coro=newcor(); var corz=newcor(); var corc=newcor();
+var jx=conCaculate(corz[0], corz[1], corc[0], corc[1]);
+var zg=conCaculate(corz[0], corz[1], coro[0], coro[1])[0];
+var cg=conCaculate(corc[0], corc[1], coro[0], coro[1])[0];
+set('muxz',coro[0].toFixed(1));
+set('muyz',coro[1].toFixed(1));
+set('mujxc',jx[1].toFixed(1));
+set('mujxfw',jx[0].toFixed(1));
+set('muzg',zg.toFixed(1));
+set('mucg',cg.toFixed(1));
+}
 function randombehind()
 {
 var cora=newcor(); var corb=newcor(); var corc=newcor();
