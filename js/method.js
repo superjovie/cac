@@ -44,7 +44,7 @@ set('sgrg2g1',rcg.toFixed(1));
 set('sgrg2o',rco.toFixed(1));
 set('sgrg2b',rcb.toFixed(1));
 set('sgrg2m',rcm.toFixed(1));
-document.getElementById('content3').innerHTML = "观察所坐标"+corm[0].toFixed(1)+ ","+corm[1].toFixed(1);
+document.getElementById('content2').innerHTML = "观察所坐标"+corm[0].toFixed(1)+ ","+corm[1].toFixed(1);
 
 
 }
