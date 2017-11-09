@@ -21,6 +21,7 @@ set('dgf1',jzsx.toFixed(1));
 set('dgf2',fgm.toFixed(1));
 set('dgd1',dgm.toFixed(1));
 }
+function becamebasic(r,a){a = 3000-(a-r);if(a<0){a=a+6000;};return a;}
 function randomdw()
 {
 var corp=newcor();
@@ -41,7 +42,7 @@ var fgo = conCaculate(corg[0],corg[1],coro[0],coro[1])[0];
 var rcb = conCaculate(corc[0],corc[1],corb[0],corb[1])[0];
 var rco = conCaculate(corc[0],corc[1],coro[0],coro[1])[0];
 var rcm = conCaculate(corc[0],corc[1],corm[0],corm[1])[0];
-function becamebasic(r,a){a = 3000-(a-r);if(a<0){a=a+6000;};return a;}
+
 rcm=becamebasic(jzsx,rcm);
 rco=becamebasic(jzsx,rco);
 rcb=becamebasic(jzsx,rcb);
