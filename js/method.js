@@ -3,7 +3,8 @@ var vx0, vy0, vx1, vy1, vF, vfg1m, vfg1g2, vfg1b, vfg1o, vrg2o, vrg2m, vrg2b, vr
 function randomdw()
 {
 var corp=newcor();
-var bd=60*Math.random();var jzsx=Math.floor(bd)*100;
+var bd=60*Math.random();
+var jzsx=bd.toFixed(0)*100;
 var fgm=3000+1000*Math.random()-500;
 var fpm=bd*100+1000*Math.random()-500;
 var d = 10000*Math.random();
