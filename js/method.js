@@ -1,6 +1,22 @@
 var xx0, yy0, xx1, yy1, ff1, ff2, dd1 = 0;
 var vx0, vy0, vx1, vy1, vF, vfg1m, vfg1g2, vfg1b, vfg1o, vrg2o, vrg2m, vrg2b, vrg2g1, vDo = 0;
-function randombd()
+function randombasicdirection()
+{
+var corg=newcor();
+var bd=60*Math.random();
+var jzsx=bd.toFixed(0)*100;
+var dj=1000*Math.random();
+
+}
+function randomlead()
+{
+var corg=newcor();
+var bd=60*Math.random();
+var jzsx=bd.toFixed(0)*100;
+var dj=1000*Math.random();
+
+}
+function randomlead()
 {
 var corg=newcor();
 var bd=60*Math.random();
