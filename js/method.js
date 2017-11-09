@@ -2,94 +2,143 @@ var xx0, yy0, xx1, yy1, ff1, ff2, dd1 = 0;
 var vx0, vy0, vx1, vy1, vF, vfg1m, vfg1g2, vfg1b, vfg1o, vrg2o, vrg2m, vrg2b, vrg2g1, vDo = 0;
 function randombasicdirection()
 {
-var corg=newcor();
-var bd=60*Math.random();
-var jzsx=bd.toFixed(0)*100;
-var dj=1000*Math.random();
+    var corg=newcor();
+    var corm=new Array;
+    corm[0]=corg[0]+10000*Math.random()-5000;
+    corm[1]=corg[1]+10000*Math.random()-5000;
+    if(corm[0]<0){corm[0]=corm[0]+100000;}
+    if(corm[1]<0){corm[1]=corm[1]+100000;}
+    var corc=new Array;
+    corc[0]=corg[0]+4000*Math.random()-2000;
+    corc[1]=corg[1]+4000*Math.random()-2000;
+    if(corc[0]<0){corc[0]=corc[0]+100000;}
+    if(corc[1]<0){corc[1]=corc[1]+100000;}
+    var gc = conCaculate(corg[0],corg[1],corc[0],corc[1])[0];
+    var gcd = conCaculate(corg[0],corg[1],corc[0],corc[1])[1];
+    var gm = conCaculate(corg[0],corg[1],corm[0],corm[1])[0];
+    var cm = conCaculate(corc[0],corc[1],corm[0],corm[1])[0];
+    var jzsx = gm/100;
+    jzsx=jzsx.toFixed(0)*100;
+    cm=becamebasic(jzsx,cm);
+    gm=becamebasic(jzsx,gm);
+    gc=becamebasic(jzsx,gc);
+    set('bdjzsx',jzsx.toFixed(1));
+    set('bdxg',corg[0].toFixed(1));
+    set('bdyg',corg[1].toFixed(1));
+    set('bdjxc',gcd.toFixed(1));
+    set('bdzc',gc.toFixed(1));
+    set('bdfzg',gm.toFixed(1));
+    set('bdfcg',cm.toFixed(1));
 
+
+}
+
+function randompolar()
+{
+    var corg=newcor();
+    var bd=60*Math.random();
+    var jzsx=bd.toFixed(0)*100;
+    var dj=1000*Math.random();
+    var gm=3000+1000*Math.random()-500;
+    var hg=5000*Math.random();
+    var gd=450*Math.random();
+    var dgm=9500*Math.random();
+    set('poxg',corg[0].toFixed(1));
+    set('poyg',corg[1].toFixed(1));
+    set('pojzsx',jzsx.toFixed(1));
+    set('pofgm',gm.toFixed(1));
+    set('pohg',hg.toFixed(1));
+    set('pogd',gd.toFixed(1));
+    set('podgm',dgm.toFixed(1));
 }
 function randomlead()
 {
-var corg=newcor();
-var bd=60*Math.random();
-var jzsx=bd.toFixed(0)*100;
-var dj=1000*Math.random();
+    var cora=newcor();
+    var na = (6000*Math.random()).toFixed(1);
+    var a1 = (6000*Math.random()).toFixed(1);
+    var a2 = (6000*Math.random()).toFixed(1);
+    var a3 = (6000*Math.random()).toFixed(1);
+    var d1 = (3000*Math.random()).toFixed(1);
+    var d2 = (3000*Math.random()).toFixed(1);
+    var d3 = (3000*Math.random()).toFixed(1);
+    set('lexa',cora[0].toFixed(1));
+    set('leya',cora[1].toFixed(1));
+    set('lena',na);
+    set('lef1',a1);
+    set('led1',d1);
+    set('lef2',a2);
+    set('led2',d2);
+    set('lef3',a3);
+    set('led3',d3);
 
-}
-function randomlead()
-{
-var corg=newcor();
-var bd=60*Math.random();
-var jzsx=bd.toFixed(0)*100;
-var dj=1000*Math.random();
 
 }
 function randomdg()
 {
-var corp=newcor();
-var bd=60*Math.random();
-var jzsx=bd.toFixed(0)*100;
-var fgm=3000+1000*Math.random()-500;
-var fpm=bd*100+1000*Math.random()-500;
-var d = 10000*Math.random();
-var corm=proCaculate(corp[0],corp[1],fpm,d);
-var dgm = d*Math.random();
-var corg=proCaculate(corm[0],corm[1],reverse(cacBasicFdirection(jzsx,fgm)),dgm);
-fgm=becamebasic(jzsx,fgm);
+    var corp=newcor();
+    var bd=60*Math.random();
+    var jzsx=bd.toFixed(0)*100;
+    var fgm=3000+1000*Math.random()-500;
+    var fpm=bd*100+1000*Math.random()-500;
+    var d = 10000*Math.random();
+    var corm=proCaculate(corp[0],corp[1],fpm,d);
+    var dgm = d*Math.random();
+    var corg=proCaculate(corm[0],corm[1],reverse(cacBasicFdirection(jzsx,fgm)),dgm);
+    fgm=becamebasic(jzsx,fgm);
 
-set('dgx0',corp[0].toFixed(1));
-set('dgy0',corp[1].toFixed(1));
-set('dgx1',corg[0].toFixed(1));
-set('dgy1',corg[1].toFixed(1));
-set('dgf1',jzsx.toFixed(1));
-set('dgf2',fgm.toFixed(1));
-set('dgd1',dgm.toFixed(1));
+    set('dgx0',corp[0].toFixed(1));
+    set('dgy0',corp[1].toFixed(1));
+    set('dgx1',corg[0].toFixed(1));
+    set('dgy1',corg[1].toFixed(1));
+    set('dgf1',jzsx.toFixed(1));
+    set('dgf2',fgm.toFixed(1));
+    set('dgd1',dgm.toFixed(1));
 }
 function becamebasic(r,a){a = 3000-(a-r);if(a<0){a=a+6000;};return a;}
 function randomdw()
 {
-var corp=newcor();
-var bd=60*Math.random();
-var jzsx=bd.toFixed(0)*100;
-var fgm=3000+1000*Math.random()-500;
-var fpm=bd*100+1000*Math.random()-500;
-var d = 10000*Math.random();
-var corm=proCaculate(corp[0],corp[1],fpm,d);
-var corg=proCaculate(corm[0],corm[1],reverse(cacBasicFdirection(jzsx,fgm)),d*Math.random());
-var corb=new Array(corg[0]+100*Math.random()-50, corg[1]+100*Math.random()-50);
-var coro=new Array(corg[0]+3000*Math.random()-1500, corg[1]+3000*Math.random()-1500);
-var corc=new Array(corg[0]+2000*Math.random()-1000, corg[1]+2000*Math.random()-1000);
-var fgb = conCaculate(corg[0],corg[1],corb[0],corb[1])[0];
-var dgb = conCaculate(corg[0],corg[1],corb[0],corb[1])[1];
-var fgc = conCaculate(corg[0],corg[1],corc[0],corc[1])[0];
-var fgo = conCaculate(corg[0],corg[1],coro[0],coro[1])[0];
-var rcb = conCaculate(corc[0],corc[1],corb[0],corb[1])[0];
-var rco = conCaculate(corc[0],corc[1],coro[0],coro[1])[0];
-var rcm = conCaculate(corc[0],corc[1],corm[0],corm[1])[0];
+    var corp=newcor();
+    var bd=60*Math.random();
+    var jzsx=bd.toFixed(0)*100;
+    var fgm=3000+1000*Math.random()-500;
+    var fpm=bd*100+1000*Math.random()-500;
+    var d = 10000*Math.random();
+    var corm=proCaculate(corp[0],corp[1],fpm,d);
+    var corg=proCaculate(corm[0],corm[1],reverse(cacBasicFdirection(jzsx,fgm)),d*Math.random());
+    var corb=new Array(corg[0]+100*Math.random()-50, corg[1]+100*Math.random()-50);
+    var coro=new Array(corg[0]+3000*Math.random()-1500, corg[1]+3000*Math.random()-1500);
+    var corc=new Array(corg[0]+2000*Math.random()-1000, corg[1]+2000*Math.random()-1000);
+    var fgb = conCaculate(corg[0],corg[1],corb[0],corb[1])[0];
+    var dgb = conCaculate(corg[0],corg[1],corb[0],corb[1])[1];
+    var fgc = conCaculate(corg[0],corg[1],corc[0],corc[1])[0];
+    var fgo = conCaculate(corg[0],corg[1],coro[0],coro[1])[0];
+    var rcb = conCaculate(corc[0],corc[1],corb[0],corb[1])[0];
+    var rco = conCaculate(corc[0],corc[1],coro[0],coro[1])[0];
+    var rcm = conCaculate(corc[0],corc[1],corm[0],corm[1])[0];
 
-rcm=becamebasic(jzsx,rcm);
-rco=becamebasic(jzsx,rco);
-rcb=becamebasic(jzsx,rcb);
-fgo=becamebasic(jzsx,fgo);
-fgc=becamebasic(jzsx,fgc);
-fgb=becamebasic(jzsx,fgb);
+    rcm=becamebasic(jzsx,rcm);
+    rco=becamebasic(jzsx,rco);
+    rcb=becamebasic(jzsx,rcb);
+    fgo=becamebasic(jzsx,fgo);
+    fgc=becamebasic(jzsx,fgc);
+    fgb=becamebasic(jzsx,fgb);
 
-var rcg = reverse(fgc);
-set('sgx0',corp[0].toFixed(1));
-set('sgy0',corp[1].toFixed(1));
-set('sgx1',coro[0].toFixed(1));
-set('sgy1',coro[1].toFixed(1));
-set('sgf',jzsx.toFixed(1));
-set('sgfg1g2',fgc.toFixed(1));
-set('sgfg1m',fgm.toFixed(1));
-set('sgfg1o',fgo.toFixed(1));
-set('sgfg1b',fgb.toFixed(1));
-set('sgdo',dgb.toFixed(1));
-set('sgrg2g1',rcg.toFixed(1));
-set('sgrg2o',rco.toFixed(1));
-set('sgrg2b',rcb.toFixed(1));
-set('sgrg2m',rcm.toFixed(1));
-document.getElementById('content2').innerHTML = "观察所坐标"+corm[0].toFixed(1)+ ","+corm[1].toFixed(1);
+    var rcg = reverse(fgc);
+    set('sgx0',corp[0].toFixed(1));
+    set('sgy0',corp[1].toFixed(1));
+    set('sgx1',coro[0].toFixed(1));
+    set('sgy1',coro[1].toFixed(1));
+    set('sgf',jzsx.toFixed(1));
+    set('sgfg1g2',fgc.toFixed(1));
+    set('sgfg1m',fgm.toFixed(1));
+    set('sgfg1o',fgo.toFixed(1));
+    set('sgfg1b',fgb.toFixed(1));
+    set('sgdo',dgb.toFixed(1));
+    set('sgrg2g1',rcg.toFixed(1));
+    set('sgrg2o',rco.toFixed(1));
+    set('sgrg2b',rcb.toFixed(1));
+    set('sgrg2m',rcm.toFixed(1));
+    document.getElementById('content2').innerHTML = "观察所坐标"+corm[0].toFixed(1)+ ","+corm[1].toFixed(1);
 
 
 }
@@ -97,34 +146,41 @@ function newcor()
 {var cor = new Array(100000*Math.random(), 100000*Math.random());return cor;}
 function randommutual()
 {
-var corz=newcor(); var corc=new Array;var coro=new Array;
-corc[0]=corz[0]+1000*Math.random()-500; 
-corc[1]=corz[1]+1000*Math.random()-500; 
-coro[0]=corz[0]+10000*Math.random()-5000; 
-coro[1]=corz[1]+10000*Math.random()-5000; 
-var jx=conCaculate(corz[0], corz[1], corc[0], corc[1]);
-var zg=conCaculate(corz[0], corz[1], coro[0], coro[1])[0];
-var cg=conCaculate(corc[0], corc[1], coro[0], coro[1])[0];
-set('muxz',coro[0].toFixed(1));
-set('muyz',coro[1].toFixed(1));
-set('mujxc',jx[1].toFixed(1));
-set('mujxfw',jx[0].toFixed(1));
-set('muzg',zg.toFixed(1));
-set('mucg',cg.toFixed(1));
+    var corz=newcor(); var corc=new Array;var coro=new Array;
+    corc[0]=corz[0]+1000*Math.random()-500;
+    corc[1]=corz[1]+1000*Math.random()-500;
+    coro[0]=corz[0]+10000*Math.random()-5000;
+    coro[1]=corz[1]+10000*Math.random()-5000;
+    var jx=conCaculate(corz[0], corz[1], corc[0], corc[1]);
+    var zg=conCaculate(corz[0], corz[1], coro[0], coro[1])[0];
+    var cg=conCaculate(corc[0], corc[1], coro[0], coro[1])[0];
+    set('muxz',coro[0].toFixed(1));
+    set('muyz',coro[1].toFixed(1));
+    set('mujxc',jx[1].toFixed(1));
+    set('mujxfw',jx[0].toFixed(1));
+    set('muzg',zg.toFixed(1));
+    set('mucg',cg.toFixed(1));
 }
 function randombehind()
 {
-var cora=newcor(); var corb=new Array;
-corb[0]=cora[0]+10000*Math.random()-5000; 
-corb[1]=cora[1]+10000*Math.random()-5000; 
-var corc=newcor();
-function newcp(){var cp = 100*Math.random();return cp;}
-var cp = newcp();
-var ca = conCaculate(corc[0], corc[1], cora[0], cora[1])[0];
-var cb = conCaculate(corc[0], corc[1], corb[0], corb[1])[0] ;
-ca=ca-cp;cb=cb-cp;
-set('bhxa',cora[0].toFixed(1)); set('bhya',cora[1].toFixed(1)); set('bhxb',corb[0].toFixed(1));
-set('bhyb',corb[1].toFixed(1)); set('bhcca',ca.toFixed(1)); set('bhccb',cb.toFixed(1)); set('bhcp',cp.toFixed(1));
+    var cora=newcor(); var corb=new Array;var corc=new Array;
+    corc[0]=cora[0]+5000*Math.random()-2500;
+    corc[1]=cora[1]+5000*Math.random()-2500;
+    if(corc[0]<0){corc[0]=corc[0]+100000;}
+    if(corc[1]<0){corc[1]=corc[1]+100000;}
+    corb[0]=cora[0]+5000*Math.random()-2500;
+    corb[1]=cora[1]+5000*Math.random()-2500;
+    if(corb[0]<0){corb[0]=corb[0]+100000;}
+    if(corb[1]<0){corb[1]=corb[1]+100000;}
+    function newcp(){var cp = 100*Math.random();return cp;}
+    var cp = newcp();
+    var ca = conCaculate(corc[0], corc[1], cora[0], cora[1])[0];
+    var cb = conCaculate(corc[0], corc[1], corb[0], corb[1])[0] ;
+    ca=ca-cp;cb=cb-cp;
+    if(ca<0){ca=ca+6000;}
+    if(cb<0){cb=cb+6000;}
+    set('bhxa',cora[0].toFixed(1)); set('bhya',cora[1].toFixed(1)); set('bhxb',corb[0].toFixed(1));
+    set('bhyb',corb[1].toFixed(1)); set('bhcca',ca.toFixed(1)); set('bhccb',cb.toFixed(1)); set('bhcp',cp.toFixed(1));
 }
 function set(id,x)
 {document.getElementById(id).value = x;}
@@ -176,11 +232,11 @@ function cacbetween(a, b) {
     a = Math.abs(a);
     b = Math.abs(b);
     if (a > b) {a = a-b;
-if(a>3000){a=6000-a;}}
-else{a = b-a; 
-if(a>3000){a=6000-a;}}
-return a;
-    }
+        if(a>3000){a=6000-a;}}
+    else{a = b-a;
+        if(a>3000){a=6000-a;}}
+    return a;
+}
 function cacTreangleSide(a, b, AB) {
     a = Math.abs(a);
     b = Math.abs(b);
@@ -357,13 +413,13 @@ function reverse(an) {
 }
 function behind() {
     var con = conCaculate(get('bhxa'), get('bhya'), get('bhxb'), get('bhyb'));
-if(cacbetween(get('bhcca')+get('bhcp'),reverse(con[0]) )+ cacbetween(get('bhccb')+get( 'bhcp'), con[0])+cacbetween(get('bhcca'),get('bhccb'))>3000)
-{document.getElementById('content3').innerHTML = "磁方位角错误" ;}
-else{
-    var angleA = changemag(reverse(get('bhcca')), get('bhcp')) - con[0];
-    var bc = cacside(get('bhcca')-get('bhccb'),con[1],angleA);
-    var cor = proCaculate(get('bhxb'), get('bhyb'), reverse(changemag(get('bhccb'), get('bhcp'))), bc);
-    document.getElementById('content3').innerHTML = "C坐标X" + cor[0].toFixed(2) + "C坐标Y" + cor[1].toFixed(2);}
+    if(cacbetween(get('bhcca')+get('bhcp'),reverse(con[0]) )+ cacbetween(get('bhccb')+get( 'bhcp'), con[0])>=3000)
+    {document.getElementById('content3').innerHTML = "磁方位角错误" ;}
+    else{
+        var angleA = changemag(reverse(get('bhcca')), get('bhcp')) - con[0];
+        var bc = cacside(get('bhcca')-get('bhccb'),con[1],angleA);
+        var cor = proCaculate(get('bhxb'), get('bhyb'), reverse(changemag(get('bhccb'), get('bhcp'))), bc);
+        document.getElementById('content3').innerHTML = "C坐标X" + cor[0].toFixed(2) + "C坐标Y" + cor[1].toFixed(2);}
 }
 function polar() {
     var height = get('podgm') * Math.sin(changeMilToRad(get('pogd')));
