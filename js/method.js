@@ -172,7 +172,7 @@ function randombehind()
     corb[1]=cora[1]+4000*Math.random()-2000;
     if(corb[0]<0){corb[0]=corb[0]+100000;}
     if(corb[1]<0){corb[1]=corb[1]+100000;}
-    function newcp(){var cp = 100*Math.random();return cp;}
+    function newcp(){var cp = 200*Math.random()-100;return cp;}
     var cp = newcp();
     var ca = conCaculate(corc[0], corc[1], cora[0], cora[1])[0];
     var cb = conCaculate(corc[0], corc[1], corb[0], corb[1])[0] ;
