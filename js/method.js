@@ -164,12 +164,12 @@ function randommutual()
 function randombehind()
 {
     var cora=newcor(); var corb=new Array;var corc=new Array;
-    corc[0]=cora[0]+5000*Math.random()-2500;
-    corc[1]=cora[1]+5000*Math.random()-2500;
+    corc[0]=cora[0]+2000*Math.random()-1000;
+    corc[1]=cora[1]+2000*Math.random()-1000;
     if(corc[0]<0){corc[0]=corc[0]+100000;}
     if(corc[1]<0){corc[1]=corc[1]+100000;}
-    corb[0]=cora[0]+5000*Math.random()-2500;
-    corb[1]=cora[1]+5000*Math.random()-2500;
+    corb[0]=cora[0]+2000*Math.random()-1000;
+    corb[1]=cora[1]+2000*Math.random()-1000;
     if(corb[0]<0){corb[0]=corb[0]+100000;}
     if(corb[1]<0){corb[1]=corb[1]+100000;}
     function newcp(){var cp = 100*Math.random();return cp;}
