@@ -1,0 +1,32 @@
+.container {
+    width: 1170px !important;
+    max-width: none !important;
+}
+.pointer {line-height: 45px; height: 45px; color: #ffffff;
+    position: relative; text-align: center; font-weight: bold; font-size: 24px;
+}
+.pointer:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-left: 23px solid white;
+    border-top: 23px solid transparent;
+    border-bottom: 23px solid transparent;
+}
+.pointer:before {
+    content: "";
+    position: absolute;
+    right: -22px;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-left: 22px solid red;
+    border-top: 22px solid transparent;
+    border-bottom: 22px solid transparent;
+}
+
+
+
